@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css'%}">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-danger ms-5" href="#">Cakery&Bakery</a>
+    <div class="collapse navbar-collapse  " id="navbarNav">
+      <ul class="navbar-nav ms-auto  me-5">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="#">Add</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row align-items-center bg-danger justify-content-center " style="height: 400px">
+        <div class="col-md-6 " style="padding-left: 300px">
+            <h3 class="text-light">Explore the wonderland of <br>tastes!</h3>
+            <p class="text-light">Assignment for HCI Exam in September 2024</p>
+            <button type="button" class="btn btn-light">Get Started</button>
+            <button type="button" class="btn btn-danger ms-4" style="border: 1px solid white" >Learn More</button>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'Screenshot_1.png'  %}" class="rounded mx-auto d-block" alt="slika"  style="height: 300px; width: 400px">
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row text-center p-5  justify-content-center bg-body-tertiary">
+        <p style="width: 500px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis doloribus facere laudantium provident repudiandae sint temporibus! Assumenda error et, incidunt maxime nobis obcaecati.
+        </p>
+        <p>John Doe / CEO, Cakery&Bakery</p>
+    </div>
+</div>
+
+<div class="container-fluid">
+<div class="row justify-content-center">
+    <h3 class="text-center text-danger">Products</h3>
+    <p class="text-center">Add more products in the edit form!</p>
+    {%for cake in cakes %}
+ <div class="card ms-5" style="width: 18rem;">
+  <img src="{{cake.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{cake.name}}</h5>
+    <p class="card-text">{{cake.description}}</p>
+    <p class="card-text">{{cake.baker.name}} {{cake.baker.surname}}</p>
+  </div>
+</div>
+
+{%endfor%}
+</div>
+</div>
+</body>
+</html>

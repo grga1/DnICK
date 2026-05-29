@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="{% static 'bootstrap.css'%}">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-danger ms-5" href="#">Cakery&Bakery</a>
+    <div class="collapse navbar-collapse  " id="navbarNav">
+      <ul class="navbar-nav ms-auto  me-5">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="#">Add</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<form method="POST" enctype="multipart/form-data" class="w-50 mx-auto p-5 mt-5 bg-light rounded">
+    {% csrf_token %}
+    <h2 class="text-center text-danger mb-5 mt-5">
+        Add new cake
+    </h2>
+    <div class="mb-3">
+        <label>Name</label>
+        {{form.name}}
+    </div>
+     <div class="mb-3">
+        <label>Price</label>
+        {{form.price}}
+    </div>
+     <div class="mb-3">
+        <label>Weight</label>
+        {{form.weight}}
+    </div>
+     <div class="mb-3">
+        <label>Description</label>
+        {{form.description}}
+    </div>
+     <div class="mb-3">
+        <label>Description</label>
+        {{form.image}}
+    </div>
+    <button type="submit" class="btn btn-danger w-100">
+        Submit
+    </button>
+</form>
+
+</body>
+</html>
