@@ -25,8 +25,6 @@ add.html page
 
 
 
-* Решението треба да се компресира и да се постави тука пред истекот на времето
-
 Достапни материјали:
 
 https://courses.finki.ukim.mk/pluginfile.php/302633/question/questiontext/879873/1/5854948/materijali%20%281%29.txt
