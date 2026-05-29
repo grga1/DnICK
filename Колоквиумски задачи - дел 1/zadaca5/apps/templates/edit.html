@@ -1,0 +1,36 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <img class="d-block mx-auto" src="{% static 'logo2.png' %}">
+</div>
+
+<div class="container-fluid" style="background-image: url('{% static "bg-breadcrumb.jpg" %}');height:300px" >
+<h1 class="text-center pt-5">EDIT</h1>
+</div>
+<form method="POST" enctype="multipart/form-data" class="w-50 mx-auto p-5 bg-light rounded">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label>Title</label>
+        {{form.naslov}}
+    </div>
+    <div class="mb-3">
+        <label>Price</label>
+        {{form.cena}}
+    </div>
+    <div class="mb-3">
+        <label>Description</label>
+        {{form.opis}}
+    </div>
+    <button  type="submit" class="btn btn-danger w-100">SEND MESSAGE</button>
+</form>
+</body>
+</html>
