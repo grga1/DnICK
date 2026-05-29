@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{%static 'bootstrap.css' %}">
+</head>
+<body>
+
+<div class="container-fluid" style="height: 300px;background-image: url('{% static "main_header_bg-copyright (1).jpg" %}')">
+   <img src="{%static 'logo-retina (1).png'%}">
+<h1 class="text-center mt-5 text-white">Upcoming Events</h1>
+</div>
+
+
+<div class="container-fluid ">
+    <div class="row justify-content-center">
+        <p class="text-center">Top Selling</p>
+        <h3 class="text-center">Top Destinations</h3>
+{%for izlozba in izlozbi%}
+<div class="card ms-5" style="width: 18rem;">
+  <p>{{izlozba.datumNaPocetok}} - {{izlozba.datumNaZavrsuvanje}}</p>
+  <p>{{izlozba.naslov}}</p>
+  <p>{{izlozba.lokacija}}</p>
+  <p>{{izlozba.opis}}</p>
+</div>
+{%endfor%}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="{%static 'bootstrap.css' %}">
+
+</head>
+<body>
+
+
+<div class="container-fluid" style="height: 300px;background-image: url('{% static "main_header_bg-copyright (1).jpg" %}')">
+   <img src="{%static 'logo-retina (1).png'%}">
+<h1 class="text-center mt-5 text-white">Upcoming Events</h1>
+</div>
+
+
+
+<form method="POST" enctype="multipart/form-data" class="w-50 mx-auto p-5 bg-light rounded">
+    {% csrf_token %}
+    <h2 class="text-center text-danger mb-5">
+        Add new destination
+    </h2>
+    <div class="mb-3">
+        <label>Image</label>
+        {{form.naslov}}
+    </div>
+    <div class="mb-3">
+        <label>Destination</label>
+        {{form.datumNaPocetok}}
+    </div>
+    <div class="mb-3">
+        <label>Price</label>
+        {{form.datumNaZavrsuvanje}}
+    </div>
+    <div class="mb-3">
+        <label>Lenght of trip</label>
+        {{form.lokacija}}
+    </div>
+    <div class="mb-3">
+        <label>Lenght of trip</label>
+        {{form.opis}}
+    </div>
+    <button type="submit" class="btn btn-danger w-100"> Add</button>
+</form>
+
+
+
+</body>
+</html>
