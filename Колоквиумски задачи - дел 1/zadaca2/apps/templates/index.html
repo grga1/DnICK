@@ -1,0 +1,54 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{%static 'bootstrap.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid ">
+    <div class="row justify-content-center">
+        <p class="text-center">Top Selling</p>
+        <h3 class="text-center">Top Destinations</h3>
+{%for travel in travels%}
+<div class="card ms-5" style="width: 18rem;">
+  <img src="{{travel.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+      <h5 class="card-title">{{travel.destination}}  <span style="margin-left: 70px">{{travel.price}}</span></h5>
+    <p class="card-text">{{travel.duration}} Days Trip</p>
+  </div>
+</div>
+{%endfor%}
+    </div>
+</div>
+</body>
+</html>
