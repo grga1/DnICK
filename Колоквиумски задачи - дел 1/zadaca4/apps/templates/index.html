@@ -1,0 +1,75 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg bg-body">
+  <div class="container-fluid">
+    <img class="" src="{%static 'logo.png' %}">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav  ms-auto p-2">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Contacts</a>
+        </li>
+          <li class="nav-item">
+              <button class="btn bg-black text-light">Contact us</button>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div class="row" style="height: 400px">
+        <div class="col-6 text-center  mt-5">
+            <h3>Architecture</h3>
+            <h3>Bureau</h3>
+        </div>
+            <div class="col-6">
+                <img class="d-block" src="{%static 'house3.jpg' %}" width="400px" height="300px" >
+        </div>
+    </div>
+     <div class="row">
+            <div class="col-6">
+                <img class="" style="margin-left: 100px"  src="{%static 'house3.jpg' %}" width="400px" height="300px" >
+        </div>
+          <div class="col-6 text-center align-items-center justify-content-center pt-5">
+          <p style="width: 250px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at beatae blanditiis cum cupiditate deserunt distinctio, ducimus explicabo illo incidunt, minima odio quae reiciendis rem repellendus rerum saepe, soluta ullam.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+{%for estate in estates%}
+<div class="card m-5 bg-secondary-subtle" style="width: 18rem;">
+  <img src="{{estate.image.url}}" class="card-img-top" alt="...">
+    </a>
+  <div class="card-body">
+    <p class="card-text">{{estate.name}}</p>
+    <p class="card-text">{{estate.area}}</p>
+    <p class="card-text">{{estate.price}}$</p>
+      <a href="{% url 'edit_estate' estate.id %}"><button type="submit" class="btn" style="border: 2px solid black" >EDIT</button></a>
+  </div>
+</div>
+{%endfor%}
+</div>
+</div>
+</body>
+</html>
